@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillBridge AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="nav">
+
+    <div class="brand">
+        SkillBridge <span>AI</span>
+    </div>
+
+    <nav>
+        <a href="#assessment">Assessment</a>
+        <a href="#resources">Resources</a>
+        <a href="/dashboard">Dashboard</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div>
+
+        <p class="eyebrow">
+            AI-POWERED CAREER GUIDANCE
+        </p>
+
+        <h1>
+            Turn your skills into a
+            <span>career roadmap.</span>
+        </h1>
+
+        <p class="lead">
+            SkillBridge AI analyzes your education, interests and
+            current skills to suggest a career path, identify skill
+            gaps and connect you with learning resources.
+        </p>
+
+        <a class="btn" href="#assessment">
+            Start Free Assessment
+        </a>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="mini-title">
+            Career Readiness
+        </div>
+
+        <div class="ring">
+            AI
+        </div>
+
+        <p>
+            Personalized • Practical • Student-focused
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ASSESSMENT -->
+
+<section id="assessment" class="section">
+
+    <div class="section-head">
+
+        <p class="eyebrow">
+            STEP 01
+        </p>
+
+        <h2>
+            Build your career profile
+        </h2>
+
+        <p>
+            Answer a few questions. No login or API key required.
+        </p>
+
+    </div>
+
+
+    <form id="assessmentForm" class="card form-grid">
+
+        <label>
+            Name
+
+            <input
+                name="name"
+                placeholder="Your name"
+                required
+            >
+        </label>
+
+
+        <label>
+            Education
+
+            <input
+                name="education"
+                placeholder="e.g. B.Tech CSE"
+                required
+            >
+        </label>
+
+
+        <label>
+            Interests
+
+            <input
+                name="interests"
+                placeholder="e.g. AI, web development, data"
+            >
+        </label>
+
+
+        <label>
+            Current skills
+
+            <input
+                name="skills"
+                placeholder="e.g. Python, SQL, Git"
+            >
+        </label>
+
+
+        <label class="wide">
+
+            Career goal
+
+            <input
+                name="goal"
+                placeholder="e.g. Software developer / Data scientist"
+            >
+
+        </label>
+
+
+        <button
+            class="btn wide"
+            type="submit"
+        >
+            Generate My Roadmap →
+        </button>
+
+    </form>
+
+
+    <div id="result" class="result hidden"></div>
+
+</section>
+
+
+<!-- LEARNING RESOURCES -->
+
+<section id="resources" class="section alt">
+
+    <div class="section-head">
+
+        <p class="eyebrow">
+            STEP 02
+        </p>
+
+        <h2>
+            Learning resources
+        </h2>
+
+        <p>
+            Curated starter resources mapped to common skills.
+        </p>
+
+    </div>
+
+
+    <div id="courseGrid" class="grid"></div>
+
+</section>
+
+
+<!-- OPPORTUNITIES -->
+
+<section class="section">
+
+    <div class="section-head">
+
+        <p class="eyebrow">
+            STEP 03
+        </p>
+
+        <h2>
+            Opportunity matching
+        </h2>
+
+        <p>
+            Sample internship roles to show how the platform
+            can connect skills with opportunities.
+        </p>
+
+    </div>
+
+
+    <div id="jobGrid" class="grid"></div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    SkillBridge AI • Built for student career discovery
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
