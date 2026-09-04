@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkillBridge Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+<header class="nav">
+
+    <div class="brand">
+        SkillBridge <span>AI</span>
+    </div>
+
+    <nav>
+        <a href="/">
+            Home
+        </a>
+    </nav>
+
+</header>
+
+
+<main class="section">
+
+    <div class="section-head">
+
+        <p class="eyebrow">
+            ADMIN / DEMO DASHBOARD
+        </p>
+
+        <h1>
+            Assessment Activity
+        </h1>
+
+        <p>
+            Recent assessment records stored locally
+            for demonstration.
+        </p>
+
+    </div>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Name
+                    </th>
+
+                    <th>
+                        Readiness
+                    </th>
+
+                    <th>
+                        Recommendation
+                    </th>
+
+                    <th>
+                        Time
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {% for row in rows %}
+
+                <tr>
+
+                    <td>
+                        {{ row[0] }}
+                    </td>
+
+                    <td>
+                        {{ row[1] }}%
+                    </td>
+
+                    <td>
+                        {{ row[2] }}
+                    </td>
+
+                    <td>
+                        {{ row[3] }}
+                    </td>
+
+                </tr>
+
+                {% else %}
+
+                <tr>
+
+                    <td colspan="4">
+                        No assessments yet.
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</main>
+
+
+</body>
+
+</html>
